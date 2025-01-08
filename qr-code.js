@@ -19,7 +19,8 @@ export default class QRCode extends HTMLElement {
       modulesize: 5,
       margin: 4,
       unit: 'px',
-      ratio: 1
+      ratio: 1,
+      ecclevel: 'L'
     }
   }
 
@@ -52,12 +53,13 @@ export default class QRCode extends HTMLElement {
   }
 
   getOptions() {
-    const { modulesize, margin, unit, ratio } = this
+    const { modulesize, margin, unit, ratio, ecclevel } = this
     return {
       margin: margin !== null ? parseInt(margin) : margin,
       modulesize: modulesize !== null ? parseInt(modulesize) : modulesize,
-      unit: unit || 'px',
-      ratio: ratio || 1
+      unit: unit || QRCode.defaultAttributes.unit,
+      ratio: ratio || QRCode.defaultAttributes.ratio,
+      ecclevel: ecclevel || QRCode.defaultAttributes.ecclevel
     }
   }
 

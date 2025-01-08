@@ -131,6 +131,17 @@
 				max=30
 				onkeypress="return event.charCode >= 48 && event.charCode <= 57"
 			/>
+			<br>
+			<label for="ecclevel">ECC Level</label>
+			<select
+				id="ecclevel"
+				onchange="document.querySelector('qr-code').ecclevel = this.value;"
+			>
+				<option value="L" selected>Low</option>
+				<option value="M">Medium</option>
+				<option value="Q">Quartile</option>
+				<option value="H">High</option>
+			</select>
 		</div>
 	</div>
 	<hr />
